@@ -1,8 +1,12 @@
 # Quality Attribute Scenarios
 
-**Project Name:** **************\_\_\_\_**************
-**Team Members:** **************\_\_\_\_**************
-**Date:** **************\_\_\_\_**************
+**Project Name:** PRJ07: Food Delivery and Tracking Platform
+**Team Members:**
+
+- Ishimwe Pacis Hanyurwimfura
+- Aditya Bhosale
+- Alfarizy Alfarizy
+  **Date:** 27th January 2026
 
 ---
 
