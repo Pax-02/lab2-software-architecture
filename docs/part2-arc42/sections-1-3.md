@@ -102,20 +102,31 @@ Customers can browse menus, place orders, pay, and then follow their delivery pr
 ### 3.1 Business Context
 
 **System Context Diagram:**
-[Insert your C4 Level 1 diagram - see example in lab handout]
+![img.png](C4 Diagram for food ordering Service drawio.png)
 
 **External Interfaces:**
 
-| Interface     | Description    | Technology       |
-| ------------- | -------------- | ---------------- |
-| [Interface 1] | [What it does] | [e.g., REST API] |
+| Interface                       | Description                                                                                            | Technology                          |
+|---------------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------|
+| Customer Mobile/Web App         | Allows customers to browse restaurants, place orders, make payments, and track deliveries in real time | Web Dashboard (React), REST APIs    |
+| Restaurant Management Interface | Enables restaurant staff to manage menus, accept/rejects orders, and update preparation status         | Web Dashboard (React), REST APIs    |
+| Delivery Partner App            | Allows delivery partners to accept delivery requests, update order status, and share live location     | Mobile App, REST APIs, GPS          |
+| Payment Gateway Interface       | Processes online payments and returns payment status                                                   | REST APIs, Cards/Wallets            |
+| Notification Service Interface  | Sends order confirmations, status updates, and delivery alerts                                         | REST APIs, Webhooks, SMS/Email/Push |
+| Maps / GPS Interface            | Provides routing, distance calculation, and live location tracking.                                    | GPS, API                            |
 
 ### 3.2 Technical Context
 
-| Component     | Technology    | Purpose        |
-| ------------- | ------------- | -------------- |
-| [Component 1] | [e.g., React] | [What it does] |
-
+| Component                    | Technology                   | Purpose                                                                         |
+|------------------------------|------------------------------|---------------------------------------------------------------------------------|
+| Customer Application         | React (Web),Flutter (Mobile) | User-facing interface for browsing, ordering, payment, and tracking             |
+| Restaurant Dashboard         | React                        | Interface for restaurant staff to manage orders and menus                       |
+| Delivery Partner Application | Flutter                      | Interface for delivery agents to manage deliveries and share location           |
+| Food Delivery Backend System | Spring Boot (Microservices)  | Core business logic for order processing, tracking, payments, and notifications |
+| Payment Gateway              | Paypal                       | Secure payment processing                                                       |
+| Notification Service         | Firebase Cloud Messaging     | Sends real-time alerts and updates                                              |
+| Maps / GPS Service           | Google Maps API              | Provides routing and real-time delivery tracking                                |
+| Database                     | PostgreSQL                   | Stores orders, users, restaurants, and delivery data                            |
 ---
 
 _This document will be expanded in M2 to include Sections 4–5._
