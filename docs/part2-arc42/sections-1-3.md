@@ -103,7 +103,7 @@ Customers can browse menus, place orders, pay, and then follow their delivery pr
 
 **System Context Diagram:**
 
-![image](C4-Diagram-for-food-ordering-Service-drawio.png)
+![image](C4-Diagram-Food-Ordering-service-drawio.png)
 
 **External Interfaces:**
 
