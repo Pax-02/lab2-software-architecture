@@ -102,7 +102,8 @@ Customers can browse menus, place orders, pay, and then follow their delivery pr
 ### 3.1 Business Context
 
 **System Context Diagram:**
-![img.png](C4 Diagram for food ordering Service drawio.png)
+
+![image](/C4 Diagram for food ordering Service drawio.png)
 
 **External Interfaces:**
 
