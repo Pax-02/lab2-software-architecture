@@ -10,32 +10,33 @@
 
 ---
 
-## QAS-01: [Descriptive Name, e.g., "Search Response Under Load"]
+## QAS-01: Order Placement During Payment Gateway Failure
 
 **Quality Attribute:** Performance
 
-| Component            | Specification |
-| -------------------- | ------------- |
-| **Source**           |               |
-| **Stimulus**         |               |
-| **Environment**      |               |
-| **Artifact**         |               |
-| **Response**         |               |
-| **Response Measure** |               |
+| Component            | Specification                                                                                                                                                                                                                                                                    |
+| -------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Source**           | External payment gateway service                                                                                                                                                                                                                                                 |
+| **Stimulus**         | Payment gateway becomes unresponsive or returns timeout/error responses during order placement                                                                                                                                                                                   |
+| **Environment**      | Peak load during lunch/dinner hours with high number of concurrent users.                                                                                                                                                                                                        |
+| **Artifact**         | Order Placement and Payment Processing services                                                                                                                                                                                                                                  |
+| **Response**         | System detects payment failure due to timeout issue, aborts the payment transaction, preserves the order state as Pending Payment, and provides  an immediate feedback to the user without blocking the system and user can retry payment without creating the same order again. |
+| **Response Measure** | Payment timeout detected ≤ 3 seconds<br/>User receives failure message ≤ 5 seconds<br/>No partial or duplicate orders created<br/>System throughput degradation ≤ 10%                                                                                                                                                                                                                                                                                 |
 
 **Applicable Tactics (Bass Ch. 5):**
 
-- [Tactic 1]: [How it achieves the response]
-- [Tactic 2]: [How it achieves the response]
+- Timeout & Retry: Limits the wait time for the payment gateway and retry for a  configurable number of times before failing.
+- Graceful Degradation: Allows the users to retry the payment later or choose an alternative payment method without re-creating the order again.
 
 **Priority Assessment:**
 
-- [ ] Architectural Driver (High Value, High Risk)
+- [x] Architectural Driver (High Value, High Risk)
 - [ ] Contractual Guarantee (High Value, Low Risk)
 - [ ] Nice-to-Have (Low Value, Low Risk)
 - [ ] Potential Risk (Low Value, High Risk)
 
-**Justification:** [Why this priority?]
+**Justification:**
+Payment processing is a critical path in the food delivery system. Failures during peak hours can directly impact revenue and user trust. Handling payment gateway failures efficiently is important for maintaining acceptable system performance and user experience under load, making this case an important architectural driver.
 
 ---
 
