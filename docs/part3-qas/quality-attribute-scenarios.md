@@ -40,34 +40,46 @@ Payment processing is a critical path in the food delivery system. Failures duri
 
 ---
 
+---
+
+
 ## QAS-02: [Descriptive Name, e.g., "Database Failover Recovery"]
+
 
 **Quality Attribute:** Availability
 
-| Component            | Specification |
-| -------------------- | ------------- |
-| **Source**           |               |
-| **Stimulus**         |               |
-| **Environment**      |               |
-| **Artifact**         |               |
-| **Response**         |               |
-| **Response Measure** |               |
+
+| Component            | Specification                                                                                                                                                                              |
+| -------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Source**           | Delivery driver using the delivery app                                                                                                                                                     |
+| **Stimulus**         | The delivery tracking crashes while a delivery is in progress                                                                                                                              |
+| **Environment**      | Normal operation during an active delivery                                                                                                                                                 |
+| **Artifact**         | Delivery tracking service                                                                                                                                                                  |
+| **Response**         | The system continues displaying the last known location of the driver and automatically restores live tracking once the service restarts                                                   |
+| **Response Measure** | - Application remain accessible to the customer <br/>-Order is not lost <br/>-Last know location is shown in 2 seconds.<br/>-live tracking resumes in 10-15 seconds after sercice recovery |
+
 
 **Applicable Tactics (Bass Ch. 5):**
 
-- [Tactic 1]: [How it achieves the response]
-- [Tactic 2]: [How it achieves the response]
+
+- Heart beat detection tactic: Periodic signals to detect that the delivery system is alive
+- Schedule resources: Have resources to re-deploy a service when it goes down
+- Graceful degradation: Still provide the last known location even if the live location is down
+
 
 **Priority Assessment:**
 
-- [ ] Architectural Driver (High Value, High Risk)
+
+- [X] Architectural Driver (High Value, High Risk)
 - [ ] Contractual Guarantee (High Value, Low Risk)
 - [ ] Nice-to-Have (Low Value, Low Risk)
 - [ ] Potential Risk (Low Value, High Risk)
 
-**Justification:** [Why this priority?]
 
+**Justification:** [Why this priority?] </br>
+This is a priority cause if the delivery service goes down then the drivers won't get deliveries and the customers won't be able to continue the ordering process.
 ---
+
 
 ## QAS-03: Adding New Payment Provider
 

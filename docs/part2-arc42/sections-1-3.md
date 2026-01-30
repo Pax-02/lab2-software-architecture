@@ -75,27 +75,81 @@ Customers can browse menus, place orders, pay, and then follow their delivery pr
 
 ---
 
-## Section 2: Constraints
+# Section 2: Constraints
+
 
 ### 2.1 Technical Constraints
 
-| Constraint                | Explanation                  |
-| ------------------------- | ---------------------------- |
-| [e.g., Must use Java 17+] | [Why this constraint exists] |
+
+#### Constraints 1: Use service oriented architecture(SOA)
+**why?**
+- To have re-usable services across applications </br>
+- To have services that represents business capabilities not granular functions
+- Scalable services
+- Example of such services representing Business capabilities (Client management, order management ,Payment & Billing, Notification |
+
+
+#### Constraints 2: Communication through standardized contracts
+**why?**
+
+
+- A standarzized communination Protocol between the services (Rest or SOA)
+- Ensure security of the data from service A to B
+
+
+#### Constraints 3: Simulated Restaurant Data
+**why?**
+- Allow the system to be developed and tested without the need of real restaurant data
+- Make the development process faster
+
+
+#### Constraints 4: Simulated GPS Tracking
+**why?**
+- To enable demonstration of delivery without the need of physical delivery device
+
+
+#### Constraints 5: Simulated GPS Tracking
+**why?**
+- To enable demonstration of delivery without the need of physical delivery device
+
+
+
 
 ### 2.2 Organizational Constraints
 
-| Constraint        | Explanation              |
-| ----------------- | ------------------------ |
-| [e.g., Team of 4] | [Impact on architecture] |
+
+#### Constraints 1: Limited Development Team
+**why?**
+- The Project shall be built by a team of 3-4 students which limits the complexity of the system
+
+
+#### Constraints 2: Project Timeline
+**why?**
+- The Project shall be built be developed in a duration of 13 weeks this limits the core functionalities to be
+  developed to ordering, payment & delivery simulation.
+
+
+#### Constraints 3: Academic Level
+**why?**
+- The system design shall align with students skill set and avoid complex technologies that might hinder the project timeline
+
 
 ### 2.3 Conventions
 
-| Convention       | Explanation         |
-| ---------------- | ------------------- |
-| [e.g., REST API] | [Standard followed] |
+
+#### Constraints 1: Use of standardized contracts
+**why?**
+- The system should use standardized communication between service being SOA or Rest
+
+
+#### Constraints 2: Comply with Academic requirements
+- Comply with academic requirements and good practices like documentation, arichitecture justifiction.
+
+
+
 
 ---
+
 
 ## Section 3: Context and Scope
 
