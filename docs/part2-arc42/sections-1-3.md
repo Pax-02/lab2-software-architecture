@@ -17,10 +17,8 @@
 ### 1.1 Requirements Overview
 
 **What is the system?**
-[2-3 sentences describing what your system does and why it exists]
 
 The system is a food delivery and tracking platform that connects customers, restaurants, drivers, and payments in one workflow.
-
 Customers can browse menus, place orders, pay, and then follow their delivery progress via live (simulated in this case) status updates and driver location tracking.
 
 **Core Features:**
@@ -33,123 +31,64 @@ Customers can browse menus, place orders, pay, and then follow their delivery pr
 
 | Priority | Quality Attribute    | Motivation         |
 | -------- | -------------------- | ------------------ |
-| 1        | [e.g., Availability] | [Why this matters] |
-| 2        | [e.g., Performance]  | [Why this matters] |
-| 3        | [e.g., Security]     | [Why this matters] |
-
-- Priority: 1
-- Quality Attribute: Reliability/Availability
-- Motivation: As the customers, they would expect ordering and tracking to work consistently. Missed on updates or downtime will break the trust and cause support problems.
-
-- Priority: 2
-- Quality Attribute: Performance/Responsiveness
-- Motivation: Browsing menus and seeing status updates should feel fast and seamless. Slow APIs will make the app feel "broken" even if it is technically working.
-
-- Priority: 3
-- Quality Attribute: Maintainability + Reusability
-- Motivation: Services should be self-contained and high-level (like Order, Payment, and Delivery). This will make them easy to reuse later for things like catering or meal-prep, and it will allow teams to improve or change one service without touching the rest of the system.
+| 1        | Reliability/Availability | As the customers, they would expect ordering and tracking to work consistently. Missed on updates or downtime will break the trust and cause support problems. |
+| 2        | Performance/Responsiveness  | Browsing menus and seeing status updates should feel fast and seamless. Slow APIs will make the app feel "broken" even if it is technically working. |
+| 3        | Maintainability + Reusability    | Services should be self-contained and high-level (like Order, Payment, and Delivery). This will make them easy to reuse later for things like catering or meal-prep, and it will allow teams to improve or change one service without touching the rest of the system. |
 
 ### 1.3 Stakeholders
 
-| Role          | Description     | Expectations         |
-| ------------- | --------------- | -------------------- |
-| End User      | [Who are they?] | [What do they need?] |
-| Administrator | [Who are they?] | [What do they need?] |
-| Developer     | [Who are they?] | [What do they need?] |
-
-- Role: End user (customer)
-- Description: Person who orders food and trakcs delivery
-- Expectations: Easy restaurant/menu browsing, simple checkout, clear order status updates, and accurate delivery tracking
-
-- Role: Administrator (restaurant staff/admin)
-- Description: Managing restaurant availability and menu, receiving and fulfilling orders
-- Expectations: See incoming orders, update order preparation status, manage menu items/availability, and minimal confusion/duplicate orders
-
-- Role: Developer (project team)
-- Description: Building and evolving the system
-- Expectations: Clear service boundaries and contracts, good testability, stable APIs, and a design that matches SOA (coarse-grained, reusable services)
-
-- Role: System administrator
-- Description: Maintain platform configuration and monitor health
-- Expectations: Basic monitoring/logs, ability to manage restaurant/driver accounts in the system, and visibility into failures (payment mock failures, delivery issues)
+| Role                                  | Description    | Expectations         |
+|---------------------------------------| -------------- | -------------------- |
+| End User (customer)                   | Person who orders food and trakcs delivery | Easy restaurant/menu browsing, simple checkout, clear order status updates, and accurate delivery tracking |
+| Administrator(restaurant staff/admin) | Managing restaurant availability and menu, receiving and fulfilling orders | See incoming orders, update order preparation status, manage menu items/availability, and minimal confusion/duplicate orders|
+| Developer (project team)              | Building and evolving the system| Clear service boundaries and contracts, good testability, stable APIs, and a design that matches SOA (coarse-grained, reusable services)|
+|System administrator|aintain platform configuration and monitor health|Basic monitoring/logs, ability to manage restaurant/driver accounts in the system, and visibility into failures (payment mock failures, delivery issues)|
 
 ---
 
 # Section 2: Constraints
 
-
 ### 2.1 Technical Constraints
 
-
 #### Constraints 1: Use service oriented architecture(SOA)
-**why?**
 - To have re-usable services across applications </br>
 - To have services that represents business capabilities not granular functions
 - Scalable services
 - Example of such services representing Business capabilities (Client management, order management ,Payment & Billing, Notification |
 
-
 #### Constraints 2: Communication through standardized contracts
-**why?**
-
-
 - A standarzized communination Protocol between the services (Rest or SOA)
 - Ensure security of the data from service A to B
 
-
 #### Constraints 3: Simulated Restaurant Data
-**why?**
 - Allow the system to be developed and tested without the need of real restaurant data
 - Make the development process faster
 
-
 #### Constraints 4: Simulated GPS Tracking
-**why?**
 - To enable demonstration of delivery without the need of physical delivery device
-
 
 #### Constraints 5: Simulated GPS Tracking
-**why?**
 - To enable demonstration of delivery without the need of physical delivery device
-
-
-
 
 ### 2.2 Organizational Constraints
 
-
 #### Constraints 1: Limited Development Team
-**why?**
-- The Project shall be built by a team of 3-4 students which limits the complexity of the system
-
+- The Project shall be built by a team of 3-4 students which limits the complexity of the system.
 
 #### Constraints 2: Project Timeline
-**why?**
 - The Project shall be built be developed in a duration of 13 weeks this limits the core functionalities to be
   developed to ordering, payment & delivery simulation.
 
-
 #### Constraints 3: Academic Level
-**why?**
 - The system design shall align with students skill set and avoid complex technologies that might hinder the project timeline
 
-
 ### 2.3 Conventions
-
-
 #### Constraints 1: Use of standardized contracts
-**why?**
-- The system should use standardized communication between service being SOA or Rest
-
+- The system should use standardized communication between service being SOA or Rest.
 
 #### Constraints 2: Comply with Academic requirements
 - Comply with academic requirements and good practices like documentation, arichitecture justifiction.
-
-
-
-
 ---
-
 
 ## Section 3: Context and Scope
 
